@@ -13,20 +13,20 @@ if rev_K < K:
     exit()
 
 if K == rev_K:
+    ans = 0
     tmp = int(N / K)
-    ans = len(str(tmp)) - 1
-    if K <= N:
-        ans += 1
+    if 0 < tmp:
+        ans += len(str(tmp))
     print(ans)
     exit()
 
 ans = 0
 tmp = int(N / K)
-ans += len(str(tmp)) - 1
+if 0 < tmp:
+    ans += len(str(tmp))
+
 tmp = int(N / rev_K)
-ans += len(str(tmp)) - 1
-if K <= N:
-    ans += 1
-if rev_K <= N:
-    ans += 1
+if 0 < tmp:
+    ans += len(str(tmp))
+
 print(ans)
